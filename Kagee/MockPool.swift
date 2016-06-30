@@ -26,7 +26,8 @@ class MockPool {
             let isEqualMethod = $0.request?.HTTPMethod == request.HTTPMethod
             let isEqualHost = $0.request?.URL?.host == request.URL?.host
             let isEqualPath = $0.request?.URL?.path == request.URL?.path
-            return isEqualMethod && isEqualHost && isEqualPath
+            let isEqualQuery = $0.request?.URL?.query == request.URL?.query
+            return isEqualMethod && isEqualHost && isEqualPath && isEqualQuery
         }.last
     }
 }
